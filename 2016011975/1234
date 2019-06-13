@@ -1,0 +1,51 @@
+随机数据生成：
+
+#include<cstdio>
+#include<algorithm>
+#include<ctime>
+#include<cstdlib>
+using namespace std;
+const int maxn = 2000;
+int arr[maxn];
+int random(int n){ return (long long) rand() * rand() % n; }     //生成一个 0 ~ n 的随机数
+int main()
+{
+    srand((unsigned) time(0));                                   //随机数种子
+}
+
+
+
+数据库存取mangoDB
+存：
+public void SaveImgBJSON(byte[] byteImg)
+{
+Document doc = new Document();
+doc["ID"] = 1;
+      doc["Img"] = byteImg;
+mongoCollection.Save(doc);
+}
+取：
+public byte[] GetImgBJSON()
+{
+  Document doc=  mongoCollection.FindOne(new Document { { "ID", 1 } });
+return doc["Img"] as Binary;
+}
+
+
+Matplot可视化显示Scatter散点图：
+import numpy as np
+import matplotlib.pyplot as plt
+
+n = 1024
+X = np.random.normal(0, 1, n)  # 标准正态分布
+Y = np.random.normal(0, 1, n)
+T = np.arctan2(Y , X)
+plt.scatter(X, Y, s=75, c=T, alpha=0.5)
+
+plt.xlim((-1, 1))
+plt.ylim((-1.5, 1.5))
+
+plt.xticks(())  # 将坐标刻度隐藏
+plt.yticks(())
+
+plt.show()
